@@ -1,0 +1,30 @@
+{
+  "name": "architecting-single-page-applications",
+  "homepage": "https://intojs.github.io/architecting-single-page-applications/",
+  "author": "Daniel Dughila @danielDughy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "pretyped": "rimraf flow-typed",
+    "typed": "flow-typed install",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "ramda": "0.25.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-scripts": "1.1.1",
+    "uuid": "3.2.1"
+  },
+  "devDependencies": {
+    "flow-bin": "0.65.0",
+    "flow-typed": "2.3.0",
+    "gh-pages": "1.1.0"
+  }
+}
