@@ -10,13 +10,6 @@ export type ArticleFields = {
   +author: string;
 }
 
-export type ArticleService = {
-  createArticle(articleFields: ArticleFields): ?Article;
-  updateLikes(article: Article, likes: number): Article;
-  isTitleValid(title: string): boolean;
-  isAuthorValid(author: string): boolean;
-}
-
 export const createArticle = (articleFields: ArticleFields): ?Article => {
   const {title, author} = articleFields;
   return isTitleValid(title) && isAuthorValid(author) ?
@@ -48,12 +41,3 @@ export const isAuthorValid = (author: string) =>
     validators.isString,
     validators.isLengthGreaterThen(0)
   ])(author);
-
-export const ArticleServiceFactory = () => ({
-  createArticle,
-  updateLikes,
-  isTitleValid,
-  isAuthorValid
-});
-
-export const articleService = ArticleServiceFactory();

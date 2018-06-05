@@ -1,5 +1,5 @@
 // @flow
-import {articleService} from "../domain/ArticleService";
+import * as articleService from "../domain/ArticleService";
 
 const article = articleService.createArticle({
   title: '12 rules for life',

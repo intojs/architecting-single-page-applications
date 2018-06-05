@@ -1,14 +1,6 @@
 [ignore]
-.*/node_modules/.*
+.*/node_modules
 
 [include]
 .*/flow-typed/.*
 .*/src/.*
-
-[libs]
-
-[lints]
-
-[options]
-
-[strict]

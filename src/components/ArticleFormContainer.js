@@ -2,11 +2,9 @@
 import React, {Component} from 'react';
 import * as R from 'ramda';
 
-import type {ArticleService} from "../domain/ArticleService";
-import type {ArticleStore} from "../store/ArticleStore";
-import {articleService} from "../domain/ArticleService";
-import {articleStore} from "../store/ArticleStore";
 import {ArticleFormComponent} from "./ArticleFormComponent";
+import * as articleService from "../domain/ArticleService";
+import * as articleStore from "../store/ArticleStore";
 
 type Props = {};
 
@@ -21,8 +19,6 @@ export type FormData = {
 };
 
 export class ArticleFormContainer extends Component<Props, FormData> {
-  articleStore: ArticleStore;
-  articleService: ArticleService;
 
   constructor(props: Props) {
     super(props);
@@ -37,9 +33,6 @@ export class ArticleFormContainer extends Component<Props, FormData> {
         valid: true
       }
     };
-
-    this.articleStore = articleStore;
-    this.articleService = articleService;
   }
 
   changeArticleTitle(event: Event) {
@@ -64,16 +57,16 @@ export class ArticleFormContainer extends Component<Props, FormData> {
     const articleTitle = R.path(['target', 'articleTitle', 'value'], event);
     const articleAuthor = R.path(['target', 'articleAuthor', 'value'], event);
 
-    const isTitleValid = this.articleService.isTitleValid(articleTitle);
-    const isAuthorValid = this.articleService.isAuthorValid(articleAuthor);
+    const isTitleValid = articleService.isTitleValid(articleTitle);
+    const isAuthorValid = articleService.isAuthorValid(articleAuthor);
 
     if (isTitleValid && isAuthorValid) {
-      const newArticle = this.articleService.createArticle({
+      const newArticle = articleService.createArticle({
         title: articleTitle,
         author: articleAuthor
       });
       if (newArticle) {
-        this.articleStore.addArticle(newArticle);
+        articleStore.addArticle(newArticle);
       }
       this.clearForm();
     } else {
