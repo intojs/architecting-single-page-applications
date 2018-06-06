@@ -1,5 +1,5 @@
 // @flow
-import type {ArticleState} from "../store/ArticleState";
+import type {ArticleState} from "../domain/ArticleState";
 import * as articleService from "../domain/ArticleService";
 import * as articleStore from "../store/ArticleStore";
 

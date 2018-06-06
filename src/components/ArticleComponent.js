@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import {Button, Card, CardBody, CardSubtitle, CardText, CardTitle} from "reactstrap";
 
 import type {Article} from "../domain/Article";
 import * as articleUiService from "../services/ArticleUiService";
@@ -18,22 +19,26 @@ export const ArticleComponent = (props: Props) => {
   } = props;
 
   return (
-    <div>
-      <h3>{article.title}</h3>
-      <p>{articleUiService.displayAuthor(article.author)}</p>
-      <p>{article.likes}</p>
-      <button
-        type="button"
-        onClick={() => likeArticle(article)}
-      >
-        Like
-      </button>
-      <button
-        type="button"
-        onClick={() => deleteArticle(article)}
-      >
-        Delete
-      </button>
-    </div>
+    <Card>
+      <CardBody>
+        <CardTitle>{article.title}</CardTitle>
+        <CardSubtitle>
+          {articleUiService.displayAuthor(article.author)}
+        </CardSubtitle>
+        <CardText>{article.likes}</CardText>
+        <Button
+          color="primary"
+          onClick={() => likeArticle(article)}
+        >
+          Like
+        </Button>{' '}
+        <Button
+          color="danger"
+          onClick={() => deleteArticle(article)}
+        >
+          Delete
+        </Button>
+      </CardBody>
+    </Card>
   );
 };

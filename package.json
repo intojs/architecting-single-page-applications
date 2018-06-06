@@ -16,10 +16,12 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "bootstrap": "4.1.1",
     "ramda": "0.25.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-scripts": "1.1.1",
+    "reactstrap": "6.1.0",
     "uuid": "3.2.1"
   },
   "devDependencies": {

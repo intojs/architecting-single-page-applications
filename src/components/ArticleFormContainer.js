@@ -97,6 +97,7 @@ export class ArticleFormContainer extends Component<Props, FormData> {
   render() {
     return (
       <ArticleFormComponent
+        className="mt-4 mb-4"
         formData={this.state}
         submitForm={this.submitForm.bind(this)}
         changeArticleTitle={(event) => this.changeArticleTitle(event)}

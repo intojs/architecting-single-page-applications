@@ -23,13 +23,12 @@ export class ArticleContainer extends Component<Props> {
 
   render() {
     return (
-      <div>
-        <ArticleComponent
-          article={this.props.article}
-          likeArticle={(article: Article) => this.likeArticle(article)}
-          deleteArticle={(article: Article) => this.removeArticle(article)}
-        />
-      </div>
+      <ArticleComponent
+        className="mb-4"
+        article={this.props.article}
+        likeArticle={(article: Article) => this.likeArticle(article)}
+        deleteArticle={(article: Article) => this.removeArticle(article)}
+      />
     )
   }
 }

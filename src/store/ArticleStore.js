@@ -2,7 +2,7 @@
 import {update} from "ramda";
 
 import type {Article} from "../domain/Article";
-import type {ArticleState} from "./ArticleState";
+import type {ArticleState} from "../domain/ArticleState";
 
 let articleState: ArticleState = Object.freeze([]);
 let subscribers: Function[] = Object.freeze([]);
